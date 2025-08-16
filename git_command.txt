@@ -22,6 +22,7 @@ git status
 
 -- commit file, delete, restore from git
 git commit -m "adding test file to tracked"
+git commit git_command.txt -m "commited changes made to this file"
 rm testing.py
 dir
 git restore testing.py
