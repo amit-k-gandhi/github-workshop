@@ -1,33 +1,42 @@
 git basic commands 
 
 -- config your user with the same email used for Github signup
-
 git config --global user.name "Amit Kumar Gandhi"
 git config --global user.email "amitgandhi.839@gmail.com"
 git config --global --list
 
 -- Intiate git in your folder 
-
 git init
 dir
 git status
 
 -- add new/untracked file to staged
-
 git add testing.py
 git add .
 
 
 -- revert the staged file to untracked 
-
 git rm --cached testing.py
 git status
 
 
 -- commit file, delete, restore from git
-
 git commit -m "adding test file to tracked"
 rm testing.py
 dir
 git restore testing.py
 history
+
+
+---------------------------- config for push to Github-----------------------
+-- set remote origin 
+git remote add origin <github repository url>
+
+-- verify origin
+git remote -v
+
+-- set remote url to push ( local to github): (option of cred login to github)
+git remote set-url origin https://<github token>@<github repository url>
+
+-- push from local to origin(github)
+git push -u origin master
