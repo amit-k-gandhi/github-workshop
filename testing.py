@@ -1,0 +1,1 @@
+print("Hello friends, this is my first file in git.")
