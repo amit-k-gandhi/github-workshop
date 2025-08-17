@@ -113,7 +113,7 @@ git fetch
 (ex : I am working on a ticket where I will create new branch to make my change
 and later will push it to dev, then in master)
 
---go and switch to dev branch first.
+--go and switch to dev branch first..
 git switch dev
 -- now, create new branch feature101 from dev (like clone branch where we can make our changes)
 git checkout -b feature101 
