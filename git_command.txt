@@ -39,6 +39,8 @@ git remote -v
 -- set remote url to push ( local to github): (option of cred login to github)
 git remote set-url origin https://<github token>@<github repository url>
 
+--alternatively we casn use ssf key for login (github-->setting)
+
 -- push from local to origin(github)
 git push -u origin master
 
