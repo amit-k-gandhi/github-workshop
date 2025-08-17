@@ -76,3 +76,27 @@ git branch dev
 
 --switch from master to dev (change working branch)
 git switch dev
+or 
+git checkout dev
+
+
+--now once we are in new barch DEV which we have created for working
+--I have created a new file and also writing into this git_command file with further learning.
+--later we have to merge this change to master over Github
+
+--check logs 
+git log --oneline (it will give head where the last change is made)
+
+
+-- push local dev branch changes over Github in dev branch
+git push -u origin dev
+
+
+-- merge all changes from dev to master in Github
+create pull request from Github UI
+validate base (where to copy master) <--- compare (from where we copying dev)
+once pull request is created. verify the changes.
+next, merge the changes. (it will copy all changes rom dev to master)
+
+--once changes are applied to master, we can pull from master to our local master branch
+git pull origin master
