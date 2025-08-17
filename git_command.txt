@@ -121,7 +121,7 @@ git checkout -b feature101
 (once I made the change, I will push it to Github and then merge to dev and then master)
 
 
-----------------------------[Hooks practical pending]-----------------------
+----------------------------[Hooks practical pending]----------------------
 
 
  
