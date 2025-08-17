@@ -1,0 +1,43 @@
+name: Auto pull request creation from dev to master (Every 10 mins) - only if any new commit found in dev branch.
+
+on:
+  schedule:
+    - cron: "*/10 * * * *"   # Runs every 10 minutes
+  workflow_dispatch:          # Allow manual trigger too
+
+jobs:
+  create-pr:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Check for new commits in dev compared to master
+        id: check_diff
+        run: |
+          git fetch origin master dev
+          if git rev-list origin/master..origin/dev --count | grep -q '^0$'; then
+            echo "No new commits to merge. Skipping PR."
+            echo "has_changes=false" >> $GITHUB_ENV
+          else
+            echo "New commits found in dev."
+            echo "has_changes=true" >> $GITHUB_ENV
+          fi
+
+      - name: Create Pull Request dev -> master
+        if: env.has_changes == 'true'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "chore: prepare merge dev -> master"
+          branch: auto-pr/dev-to-master
+          base: master
+          title: "Auto PR: Merge dev into master"
+          body: |
+            This pull request was automatically created by GitHub Actions.
+            - Source branch: `dev`
+            - Target branch: `master`
