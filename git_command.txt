@@ -81,7 +81,7 @@ git checkout dev
 
 
 --now once we are in new barch DEV which we have created for working
---I have created a new file and also writing into this git_command file with further learning.
+--I have created a new file here and also writing into this git_command file with further learning.
 --later we have to merge this change to master over Github
 
 --check logs 
@@ -98,5 +98,30 @@ validate base (where to copy master) <--- compare (from where we copying dev)
 once pull request is created. verify the changes.
 next, merge the changes. (it will copy all changes rom dev to master)
 
---once changes are applied to master, we can pull from master to our local master branch
+--once changes are applied to master, we can pull from github master to our local master branch
 git pull origin master
+
+
+-- clone branch (if needed)
+git fetch
+
+
+
+
+-- create new working feature branch from dev branch
+
+(ex : I am working on a ticket where I will create new branch to make my change
+and later will push it to dev, then in master)
+
+--go and switch to dev branch first..
+git switch dev
+-- now, create new branch feature101 from dev (like clone branch where we can make our changes)
+git checkout -b feature101 
+
+(once I made the change, I will push it to Github and then merge to dev and then master)
+
+
+----------------------------[Hooks practical pending]-----------------------
+
+
+ 
