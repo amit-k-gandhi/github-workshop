@@ -41,3 +41,15 @@ git remote set-url origin https://<github token>@<github repository url>
 
 -- push from local to origin(github)
 git push -u origin master
+
+
+
+-------------- copy someone else's repo to your github account---------
+go to your friends repo url --> click fork
+onced done, you will see a copy in your github repo list.
+
+
+-------------- clone repo/ file from Github to local-----------------
+select the folder where you want to clone. Open the cmd/terminal from this folder. 
+then run command :
+git clone <url of the repo you want to clone>
